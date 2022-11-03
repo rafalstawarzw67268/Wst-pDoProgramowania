@@ -3,17 +3,17 @@ przedziału 0 – 100 pomijać dalsze wykonywanie pętli. Sprawdź działanie pr
 nieskończoną, czyli taką której warunek zawsze jest prawdziwy. Zakończ działanie pętli przy użyciu instrukcji
 break"""
 
-n = int(input("Podaj liczbę studentów: "))
-i = 1
-suma = 0
 
-while i < n + 1:
-    punkty = float(input(f"Podaj liczbę punktów studenta {i}: "))
-    if punkty < 0 or punkty > 100:
+n = int(input("Proszę podać liczbę studentów: "))
+a = 1  # wyświetlanie od 1 studenta
+suma = 0  # podstawienie pod dodawanie punktów
+while True:
+    b = int(input(f"Proszę podać punkty studenta {a}: "))
+    if b<0 or b>100:
         continue
-    i = i + 1
-    suma = suma + punkty
-
-
-średnia = suma / n
-print("Średnia wynosi: ", średnia)
+    suma += b  # sumowanie punktów studentów
+    a += 1  # przechodzenie do kolejnego studenta
+    if a>n:
+        break
+y = suma / n  # obliczanie średniej
+print("Średnia wszystkich studentów", round(y, 2))
