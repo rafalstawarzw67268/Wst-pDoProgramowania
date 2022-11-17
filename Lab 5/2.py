@@ -15,9 +15,38 @@ klucz:wartość) do nowego słownika.
 • Sprawdź, czy wartość „Jones” występuje w słowniku.
 • Zmień w słowniku klucz ‘city’ na ‘location’."""
 
-sample_dict = {"name": "Kelly","surname": "Jones","age": 25,"salary": 8000,"city": "New york"}
-for k in sample_dict.keys():
-    k
+sample_dict = {
+ "name": "Kelly",
+ "surname": "Jones",
+ "age": 25,
+ "salary": 8000,
+ "city": "New york"}
+for k, v in sample_dict.items():
+ print (f'{k:<10} = {v:>8}')
+d2={}
+l = ["name","age","city"]
+for k in l:
+    if k in sample_dict.keys():
+        d2[k]=sample_dict[k]
+
+d2={k:sample_dict[k] for k in l if k in sample_dict.keys()}
+print(d2)
+
+d3=sample_dict.copy()
+
+for i in l:
+    if i in d3:
+        d3.pop(i)
+print(d3)
+
+if "Jones" in sample_dict.values():
+    print("Wartość występuje")
+else:
+    print("Wartosc niewystepuje")
+
+sample_dict["location"] = sample_dict["city"]
+del sample_dict["city"]
+print(sample_dict)
 
 
 
